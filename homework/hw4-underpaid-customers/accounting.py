@@ -19,10 +19,10 @@ def payment_status(file_name):
 
         # check if over paid or underpaid
         if amount_paid > expected_price:
-            print(f">> {customer_name} has OVERPAID for their order.")
+            print(f"OVERPAID>> {customer_name} has overpaid for their order.")
         
         elif amount_paid < expected_price:
-            print(f">> {customer_name} has UNDERPAID for their order.")
+            print(f"UNDERPAID>> {customer_name} has underpaid for their order.")
 
     customer_data.close()
 
