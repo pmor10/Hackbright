@@ -115,9 +115,39 @@ def all_names_by_house(filename):
     ghosts = []
     instructors = []
 
-    # TODO: replace this with your code
+    cohort_data = open(filename)
 
-    return []
+    for data in cohort_data:
+      house_names = data.strip().split('|')
+      first_name = house_names[0]
+      last_name = house_names[1]
+      full_name = first_name + ' ' + last_name
+      testing = house_names[2]
+      cohort_name = house_names[4]
+
+      if testing == 'Dumbledore\'s Army':
+        dumbledores_army.append(full_name)
+      
+      elif testing == 'Gryffindor':
+        gryffindor.append(full_name)
+
+      elif testing == 'Hufflepuff':
+        hufflepuff.append(full_name)
+      
+      elif testing == 'Ravenclaw':
+        ravenclaw.append(full_name)
+      
+      elif testing == 'Slytherin':
+        slytherin.append(full_name)
+
+      else:
+        if cohort_name == 'G':
+          ghosts.append(full_name)
+        elif cohort_name == 'I':
+          instructors.append(full_name)
+        
+    return [sorted(dumbledores_army), sorted(gryffindor), sorted(hufflepuff), 
+            sorted(ravenclaw), sorted(slytherin), sorted(ghosts), sorted(instructors)]
 
 
 def all_data(filename):
@@ -141,7 +171,18 @@ def all_data(filename):
 
     all_data = []
 
-    # TODO: replace this with your code
+    cohort_data = open(filename)
+
+    for data in cohort_data:
+      data_tokens = data.strip().split('|')
+      first_name = data_tokens[0]
+      last_name = data_tokens[1]
+      full_name = first_name + ' ' + last_name
+      house_name = data_tokens[2]
+      advisor = data_tokens[3]
+      cohort_name = data_tokens[4]
+
+      all_data.append((full_name, house_name, advisor, cohort_name))
 
     return all_data
 
