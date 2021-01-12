@@ -2,15 +2,16 @@
 
 def count_words(filename):
 
-    test_data = open(filename)
+    data = open(filename)
 
     dict_words = {}
 
-    for line in test_data:
+    for line in data:
+
         words = line.split(' ')
 
         for word in words:
-        
+            
             dict_words[word] = dict_words.get(word, 0) + 1
 
     return dict_words
